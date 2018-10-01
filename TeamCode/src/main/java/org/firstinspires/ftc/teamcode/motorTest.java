@@ -78,15 +78,15 @@ import com.qualcomm.robotcore.util.Range;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative Opmode")
+@TeleOp(name="motorTest", group="Iterative Opmode")
 public class motorTest extends OpMode {
     // Declare OpMode members.
-    private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor leftMotor = null;
-    private DcMotor rightMotor = null;
-    private DcMotor leftMotorBack = null;
-    private DcMotor rightMotorBack = null;
-    private DcMotor glyphMotor = null;
+    //private ElapsedTime runtime = new ElapsedTime();
+    // DcMotor leftMotor = null;
+    //private DcMotor rightMotor = null;
+    // DcMotor leftMotorBack = null;
+    //private DcMotor rightMotorBack = null;
+    //private DcMotor glyphMotor = null;
     private DcMotor armMotor = null;
     /*
      * Code to run ONCE when the driver hits INIT
@@ -99,7 +99,7 @@ public class motorTest extends OpMode {
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
         //leftMotor = hardwareMap.get(DcMotor.class, "leftMotor");
-        armMotor = hardwareMap.get(DcMotor.class, "leftMotor");
+        armMotor = hardwareMap.get(DcMotor.class, "armMotor");
         //rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
         //leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
         //rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
@@ -145,7 +145,7 @@ public class motorTest extends OpMode {
         //Send calculated power to wheels
         //leftMotor.setPower(leftPower/1.2);
 
-        armMotor.setPower(armPower/1.5);
+        armMotor.setPower(armPower/4);
         //leftMotorBack.setPower(leftPower/1.2);
         //rightMotor.setPower(rightPower/1.2);
         //rightMotorBack.setPower(rightPower/1.2);
