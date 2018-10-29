@@ -78,10 +78,10 @@ public class movingRobot extends OpMode {
         rightPower = -gamepad1.right_stick_y;
         //armPower = -gamepad1.left_stick_y;
         //Send calculated power to wheels
-        leftMotor.setPower(leftPower/1.2);
+        leftMotor.setPower(leftPower * 2);
         //armMotor.setPower(armPower/4);
         //leftMotorBack.setPower(leftPower/1.2);
-        rightMotor.setPower(rightPower/1.2);
+        rightMotor.setPower(rightPower * 2);
         //rightMotorBack.setPower(rightPower/1.2);
     }
     /*
