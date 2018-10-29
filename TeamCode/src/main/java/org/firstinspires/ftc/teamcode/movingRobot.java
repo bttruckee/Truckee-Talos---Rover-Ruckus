@@ -20,8 +20,8 @@ public class movingRobot extends OpMode {
     //private ElapsedTime runtime = new ElapsedTime();
     DcMotor leftMotor = null;
      DcMotor rightMotor = null;
-    // DcMotor leftMotorBack = null;
-    //private DcMotor rightMotorBack = null;
+    DcMotor leftMotorBack = null;
+    DcMotor rightMotorBack = null;
     //private DcMotor glyphMotor = null;
     /*
      * Code to run ONCE when the driver hits INIT
@@ -36,15 +36,15 @@ public class movingRobot extends OpMode {
         leftMotor = hardwareMap.get(DcMotor.class, "leftMotor");
         //armMotor = hardwareMap.get(DcMotor.class, "armMotor");
         rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
-        //leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
-        //rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
+        leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
+        rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
         //glyphMotor = hardwareMap.get(DcMotor.class, "glyphMotor");
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
         leftMotor.setDirection(DcMotor.Direction.FORWARD);
         rightMotor.setDirection(DcMotor.Direction.REVERSE);
-        //leftMotorBack.setDirection(DcMotor.Direction.FORWARD);
-        //rightMotorBack.setDirection(DcMotor.Direction.REVERSE);
+        leftMotorBack.setDirection(DcMotor.Direction.FORWARD);
+        rightMotorBack.setDirection(DcMotor.Direction.REVERSE);
         //glyphMotor.setDirection(DcMotor.Direction.FORWARD);
 
         // Tell the driver that initialization is complete.
@@ -79,10 +79,9 @@ public class movingRobot extends OpMode {
         //armPower = -gamepad1.left_stick_y;
         //Send calculated power to wheels
         leftMotor.setPower(leftPower * 2);
-        //armMotor.setPower(armPower/4);
-        //leftMotorBack.setPower(leftPower/1.2);
+        leftMotorBack.setPower(leftPower * 2);
         rightMotor.setPower(rightPower * 2);
-        //rightMotorBack.setPower(rightPower/1.2);
+        rightMotorBack.setPower(rightPower * 2);
     }
     /*
      * Code to run ONCE after the driver hits STOP
