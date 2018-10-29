@@ -22,7 +22,7 @@ public class movingRobot extends OpMode {
      DcMotor rightMotor = null;
     DcMotor leftMotorBack = null;
     DcMotor rightMotorBack = null;
-    //private DcMotor glyphMotor = null;
+    private DcMotor armMotor = null;
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -34,7 +34,7 @@ public class movingRobot extends OpMode {
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
         leftMotor = hardwareMap.get(DcMotor.class, "leftMotor");
-        //armMotor = hardwareMap.get(DcMotor.class, "armMotor");
+        armMotor = hardwareMap.get(DcMotor.class, "armMotor");
         rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
         leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
         rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
@@ -45,7 +45,7 @@ public class movingRobot extends OpMode {
         rightMotor.setDirection(DcMotor.Direction.REVERSE);
         leftMotorBack.setDirection(DcMotor.Direction.FORWARD);
         rightMotorBack.setDirection(DcMotor.Direction.REVERSE);
-        //glyphMotor.setDirection(DcMotor.Direction.FORWARD);
+        armMotor.setDirection(DcMotor.Direction.FORWARD);
 
         // Tell the driver that initialization is complete.
         telemetry.addData("Status", "Initialized");
@@ -57,7 +57,7 @@ public class movingRobot extends OpMode {
         //double leftPower;
         double leftPower;
         double rightPower;
-        //double armhPower;
+        double armPower;
 
         //armServo1.setPosition(1);
         //armServo2.setPosition(0);
@@ -76,8 +76,9 @@ public class movingRobot extends OpMode {
         // - This requires no math, but it is hard to drive forward slowly and keep straight.
         leftPower = -gamepad1.left_stick_y;
         rightPower = -gamepad1.right_stick_y;
-        //armPower = -gamepad1.left_stick_y;
+        armPower = -gamepad2.left_stick_y;
         //Send calculated power to wheels
+        armMotor.setPower(armPower);
         leftMotor.setPower(leftPower * 2);
         leftMotorBack.setPower(leftPower * 2);
         rightMotor.setPower(rightPower * 2);
