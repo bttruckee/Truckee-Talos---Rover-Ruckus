@@ -30,7 +30,8 @@ public class bread extends LinearOpMode {
     DcMotor leftMotorBack = null;
     DcMotor rightMotorBack = null;
     //DcMotor glyphMotor = null;
-    //Servo armServo = null;
+    DcMotor armMotor = null;
+
     //Servo armServo1 =null;
     //Servo armServo2 = null;
     //Sensor color = null;
@@ -43,13 +44,18 @@ public class bread extends LinearOpMode {
         leftMotorBack = hardwareMap.dcMotor.get("leftMotorBack");
         rightMotorBack = hardwareMap.dcMotor.get("rightMotorBack");
         //glyphMotor = hardwareMap.dcMotor.get("glyphMotor");
-        //armServo = hardwareMap.servo.get("armServo");
+        armMotor = hardwareMap.dcMotor.get("armMotor");
         //armServo1 = hardwareMap.servo.get("armServo1");
         //armServo2 = hardwareMap.servo.get("armServo2");
-        //armServo.setPosition(0);
+        armMotor.setPower(0);
         //armServo1.setPosition(.4);
         //armServo2.setPosition(.6);
-        //waitForStart();
+        waitForStart();
+        armMotor.setPower(-1);
+        Thread.sleep(500);
+        armMotor.setPower(0);
+        Thread.sleep(500);
+        TurnLeft(1);
         //armServo1.setPosition(0);
         //armServo2.setPosition(1);
         //Thread.sleep(1500);
@@ -70,6 +76,10 @@ public class bread extends LinearOpMode {
         //DriveBackwards(.2);
         //Thread.sleep(300);
         //DriveForward(0);
+        Thread.sleep(500);
+        DriveBackwards(.2);
+        Thread.sleep(300);
+        DriveForward(0);
     }
     public void DriveForward (double power)
     {
