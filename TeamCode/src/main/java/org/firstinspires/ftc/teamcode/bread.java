@@ -29,11 +29,11 @@ public class bread extends LinearOpMode {
     DcMotor rightMotor = null;
     DcMotor leftMotorBack = null;
     DcMotor rightMotorBack = null;
-    DcMotor glyphMotor = null;
-    Servo armServo = null;
-    Servo armServo1 =null;
-    Servo armServo2 = null;
-    Sensor color = null;
+    //DcMotor glyphMotor = null;
+    //Servo armServo = null;
+    //Servo armServo1 =null;
+    //Servo armServo2 = null;
+    //Sensor color = null;
 
     @Override public void runOpMode () throws InterruptedException {
         //frontR = hardwareMap.dcMotor.get("frontR");
@@ -53,30 +53,30 @@ public class bread extends LinearOpMode {
         //armServo1.setPosition(0);
         //armServo2.setPosition(1);
         //Thread.sleep(1500);
-        glyphMotor.setPower(-1);
+        //glyphMotor.setPower(-1);
         Thread.sleep(500);
-        DriveForward(.25);
+        DriveForward(.8);
         Thread.sleep(600);
-        armServo1.setPosition(.8);
-        armServo2.setPosition(.2);
+        //armServo1.setPosition(.8);
+        //armServo2.setPosition(.2);
         //TurnLeft(1);
         //Thread.sleep(500);
         //DriveForward(1);
         //Thread.sleep(4000);
         //TurnRight(1);
         //Thread.sleep(500);
-        glyphMotor.setPower(0);
-        Thread.sleep(500);
-        DriveBackwards(.2);
-        Thread.sleep(300);
-        DriveForward(0);
+        //glyphMotor.setPower(0);
+        //Thread.sleep(500);
+        //DriveBackwards(.2);
+        //Thread.sleep(300);
+        //DriveForward(0);
     }
     public void DriveForward (double power)
     {
         //frontL.setPower(power);
         //frontR.setPower(power);
         leftMotor.setPower(power);
-        glyphMotor.setPower(-1);
+        //glyphMotor.setPower(-1);
         leftMotorBack.setPower(power);
         rightMotorBack.setPower(-power);
         rightMotor.setPower(-power);
@@ -85,14 +85,14 @@ public class bread extends LinearOpMode {
     {
         //frontL.setPower(power);
         //frontR.setPower(power);
-        glyphMotor.setPower(-1);
+        //glyphMotor.setPower(-1);
         leftMotorBack.setPower(-power);
         leftMotor.setPower(-power);
         rightMotor.setPower(power);
         rightMotorBack.setPower(power);
     }
     public void TurnLeft (double power){
-        glyphMotor.setPower(-1);
+        //glyphMotor.setPower(-1);
         leftMotorBack.setPower(-power);
         leftMotor.setPower(-power);
         rightMotor.setPower(-power);
