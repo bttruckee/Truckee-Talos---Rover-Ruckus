@@ -13,10 +13,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
-
-public class iLikeTurtles {
-    @TeleOp(name="iLikeTurtles", group="Iterative Opmode")
-    public class movingRobot extends OpMode {
+@TeleOp(name="iLikeTurtles", group="Iterative Opmode")
+public class iLikeTurtles extends OpMode{
         // Declare OpMode members.
         //private ElapsedTime runtime = new ElapsedTime();
         DcMotor leftMotor = null;
@@ -40,7 +38,7 @@ public class iLikeTurtles {
             rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
             leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
             rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
-            armMotor = hardwareMap.get(DcMotor.class, "glyphMotor");
+            armMotor = hardwareMap.get(DcMotor.class, "armMotor");
             // Most robots need the motor on one side to be reversed to drive forward
             // Reverse the motor that runs backwards when connected directly to the battery
             leftMotor.setDirection(DcMotor.Direction.FORWARD);
@@ -76,9 +74,9 @@ public class iLikeTurtles {
 
             // Tank Mode uses one stick to control each wheel.
             // - This requires no math, but it is hard to drive forward slowly and keep straight.
-            leftPower = -gamepad1.left_stick_y;
-            rightPower = -gamepad1.right_stick_y;
-            armPower = -gamepad1.left_stick_y;
+            leftPower = -gamepad1.right_stick_y;
+            rightPower = -gamepad1.left_stick_y;
+            armPower = -gamepad2.left_stick_y;
             //Send calculated power to wheels
             leftMotor.setPower(leftPower * 2);
             leftMotorBack.setPower(leftPower * 2);
@@ -87,4 +85,3 @@ public class iLikeTurtles {
             armMotor.setPower(armPower);
       }
     }
-}
