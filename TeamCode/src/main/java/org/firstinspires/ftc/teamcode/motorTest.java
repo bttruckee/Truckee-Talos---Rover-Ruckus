@@ -95,7 +95,7 @@ import com.qualcomm.robotcore.util.Range;
             //Send calculated power to wheels
             //leftMotor.setPower(leftPower/1.2);
 
-            armMotor.setPower(armPower/4);
+            armMotor.setPower(armPower/2);
             //leftMotorBack.setPower(leftPower/1.2);
             //rightMotor.setPower(rightPower/1.2);
             //rightMotorBack.setPower(rightPower/1.2);

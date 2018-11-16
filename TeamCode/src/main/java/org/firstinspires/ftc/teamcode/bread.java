@@ -23,7 +23,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Created by sawyerthompson on 10/27/17.
  */
 
-@Autonomous(name="Auto")
+@Autonomous(name="Bread")
 public class bread extends LinearOpMode {
     DcMotor leftMotor = null;
     DcMotor rightMotor = null;
@@ -51,18 +51,14 @@ public class bread extends LinearOpMode {
         //armServo1.setPosition(.4);
         //armServo2.setPosition(.6);
         waitForStart();
-        armMotor.setPower(-1);
-        Thread.sleep(500);
+        armMotor.setPower(1);
+        Thread.sleep(2700);
         armMotor.setPower(0);
         Thread.sleep(500);
-        TurnLeft(1);
         //armServo1.setPosition(0);
         //armServo2.setPosition(1);
         //Thread.sleep(1500);
         //glyphMotor.setPower(-1);
-        Thread.sleep(500);
-        DriveForward(.8);
-        Thread.sleep(600);
         //armServo1.setPosition(.8);
         //armServo2.setPosition(.2);
         //TurnLeft(1);
@@ -76,10 +72,6 @@ public class bread extends LinearOpMode {
         //DriveBackwards(.2);
         //Thread.sleep(300);
         //DriveForward(0);
-        Thread.sleep(500);
-        DriveBackwards(.2);
-        Thread.sleep(300);
-        DriveForward(0);
     }
     public void DriveForward (double power)
     {
