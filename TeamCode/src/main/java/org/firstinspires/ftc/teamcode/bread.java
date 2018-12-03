@@ -32,8 +32,8 @@ public class bread extends LinearOpMode {
     //DcMotor glyphMotor = null;
     DcMotor armMotor = null;
 
-    //Servo armServo1 =null;
-    //Servo armServo2 = null;
+    Servo armServo1 =null;
+    Servo armServo2 = null;
     //Sensor color = null;
 
     @Override public void runOpMode () throws InterruptedException {
@@ -45,17 +45,35 @@ public class bread extends LinearOpMode {
         rightMotorBack = hardwareMap.dcMotor.get("rightMotorBack");
         //glyphMotor = hardwareMap.dcMotor.get("glyphMotor");
         armMotor = hardwareMap.dcMotor.get("armMotor");
-        //armServo1 = hardwareMap.servo.get("armServo1");
-        //armServo2 = hardwareMap.servo.get("armServo2");
+        armServo1 = hardwareMap.servo.get("armServo1");
+        armServo2 = hardwareMap.servo.get("armServo2");
         armMotor.setPower(0);
-        //armServo1.setPosition(.4);
-        //armServo2.setPosition(.6);
+        armServo1.setPosition(0);
+        armServo2.setPosition(0);
         waitForStart();
         armMotor.setPower(1);
-        Thread.sleep(2700);
+        Thread.sleep(3200);
         armMotor.setPower(0);
+        Thread.sleep(1000);
+        turnLeft(.5);
+        Thread.sleep(2450);
+        DriveForward(0);
+        Thread.sleep(1000);
+        DriveForward(.4);
+        Thread.sleep(2000);
+        DriveForward(0);
+        Thread.sleep(1000);
+        turnLeft(.6);
+        Thread.sleep(1400);
+        DriveForward(.4);
         Thread.sleep(500);
-        //armServo1.setPosition(0);
+        DriveForward(0);
+        Thread.sleep(   1000);
+        armServo1.setPosition(1);
+        Thread.sleep(2000);
+        DriveForward(1);
+        Thread.sleep(3000);
+        armServo1.setPosition(0);
         //armServo2.setPosition(1);
         //Thread.sleep(1500);
         //glyphMotor.setPower(-1);
@@ -71,7 +89,7 @@ public class bread extends LinearOpMode {
         //Thread.sleep(500);
         //DriveBackwards(.2);
         //Thread.sleep(300);
-        //DriveForward(0);
+        DriveForward(0);
     }
     public void DriveForward (double power)
     {
@@ -93,7 +111,7 @@ public class bread extends LinearOpMode {
         rightMotor.setPower(power);
         rightMotorBack.setPower(power);
     }
-    public void TurnLeft (double power){
+    public void turnLeft (double power){
         //glyphMotor.setPower(-1);
         leftMotorBack.setPower(-power);
         leftMotor.setPower(-power);
@@ -102,9 +120,9 @@ public class bread extends LinearOpMode {
         //frontR.setPower(power);
         //frontL.setPower(-power);
     }
-    public void TurnRight (double power)
+    public void turnRight (double power)
     {
-        TurnLeft(-power);
+        turnLeft(-power);
     }
 
 

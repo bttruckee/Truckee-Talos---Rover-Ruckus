@@ -21,7 +21,7 @@ public class iLikeTurtles extends OpMode{
         DcMotor rightMotor = null;
         DcMotor leftMotorBack = null;
         DcMotor rightMotorBack = null;
-
+        Servo armServo2 = null;
         private DcMotor armMotor = null;
         /*
          * Code to run ONCE when the driver hits INIT
@@ -39,6 +39,7 @@ public class iLikeTurtles extends OpMode{
             leftMotorBack = hardwareMap.get(DcMotor.class, "leftMotorBack");
             rightMotorBack = hardwareMap.get(DcMotor.class, "rightMotorBack");
             armMotor = hardwareMap.get(DcMotor.class, "armMotor");
+            armServo2 = hardwareMap.servo.get("armServo2");
             // Most robots need the motor on one side to be reversed to drive forward
             // Reverse the motor that runs backwards when connected directly to the battery
             leftMotor.setDirection(DcMotor.Direction.FORWARD);
@@ -58,9 +59,10 @@ public class iLikeTurtles extends OpMode{
             double leftPower;
             double rightPower;
             double armPower;
+            double servoPower;
 
             //armServo1.setPosition(1);
-            //armServo2.setPosition(0);
+            armServo2.setPosition(0);
             // Choose to drive using either Tank Mode, or POV Mode
             // Comment out the method that's not used.  The default below is POV.
 
@@ -78,10 +80,19 @@ public class iLikeTurtles extends OpMode{
             rightPower = -gamepad1.left_stick_y;
             armPower = -gamepad2.left_stick_y;
             //Send calculated power to wheels
-            leftMotor.setPower(leftPower * 2);
-            leftMotorBack.setPower(leftPower * 2);
-            rightMotor.setPower(rightPower * 2);
-            rightMotorBack.setPower(rightPower * 2);
+            leftMotor.setPower(leftPower/1.5);
+            leftMotorBack.setPower(leftPower/1.5);
+            rightMotor.setPower(rightPower/1.5);
+            rightMotorBack.setPower(rightPower/1.5);
             armMotor.setPower(armPower);
+            if(gamepad1.a)
+            {
+                armServo2.setPosition(.9);
+            }
+            else
+
+            if (gamepad1.y)  {
+                armServo2.setPosition(.1);
+            }
       }
     }
