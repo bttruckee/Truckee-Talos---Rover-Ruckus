@@ -117,8 +117,8 @@ public class BasicOpMode_Iterative extends OpMode
 
         // Tank Mode uses one stick to control each wheel.
         // - This requires no math, but it is hard to drive forward slowly and keep straight.
-        // leftPower  = -gamepad1.left_stick_y ;
-        // rightPower = -gamepad1.right_stick_y ;
+         leftPower  = -gamepad1.left_stick_y ;
+         rightPower = -gamepad1.right_stick_y ;
 
         // Send calculated power to wheels
         leftDrive.setPower(leftPower);

@@ -76,8 +76,9 @@ public class iLikeTurtles extends OpMode{
 
             // Tank Mode uses one stick to control each wheel.
             // - This requires no math, but it is hard to drive forward slowly and keep straight.
-            leftPower = -gamepad1.right_stick_y;
-            rightPower = -gamepad1.left_stick_y;
+            rightPower  = -gamepad1.left_stick_y ;
+            leftPower = -gamepad1.right_stick_y ;
+            // Send calculated power to wheels
             armPower = -gamepad2.left_stick_y;
             //Send calculated power to wheels
             leftMotor.setPower(leftPower/1.5);
@@ -85,14 +86,5 @@ public class iLikeTurtles extends OpMode{
             rightMotor.setPower(rightPower/1.5);
             rightMotorBack.setPower(rightPower/1.5);
             armMotor.setPower(armPower);
-            if(gamepad1.a)
-            {
-                armServo2.setPosition(.9);
-            }
-            else
-
-            if (gamepad1.y)  {
-                armServo2.setPosition(.1);
-            }
       }
     }

@@ -59,6 +59,9 @@ public class bread extends LinearOpMode {
         Thread.sleep(2450);
         DriveForward(0);
         Thread.sleep(1000);
+        armServo2.setPosition(0);
+        DriveForward(0);
+        Thread.sleep(1000);
         DriveForward(.4);
         Thread.sleep(2000);
         DriveForward(0);
@@ -71,6 +74,11 @@ public class bread extends LinearOpMode {
         Thread.sleep(   1000);
         armServo1.setPosition(1);
         Thread.sleep(2000);
+        DriveForward(0);
+        Thread.sleep(1000);
+        armServo2.setPosition(0);
+        DriveForward(0);
+        Thread.sleep(1000);
         DriveForward(1);
         Thread.sleep(3000);
         armServo1.setPosition(0);
