@@ -18,13 +18,11 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-/**
- /**
- * Created by sawyerthompson on 10/27/17.
- */
+
+
 
 @Autonomous(name="New")
-public class New extends LinearOpMode {
+public class neckGuy extends LinearOpMode {
     DcMotor leftMotor = null;
     DcMotor rightMotor = null;
     DcMotor leftMotorBack = null;
