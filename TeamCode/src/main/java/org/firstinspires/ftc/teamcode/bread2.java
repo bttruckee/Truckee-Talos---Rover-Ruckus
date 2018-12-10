@@ -61,49 +61,64 @@ public class bread2 extends LinearOpMode {
         // each turn left will be 180 degrees so 2 turns will be a full 360 turnaround
         // this will help with consistancy of the program
 
-        turnRight(.5);
-        Thread.sleep(1000);
+        turnRight(.25);
+        Thread.sleep(2450 );
         DriveForward(0);
         Thread.sleep(1000);
 
-        turnRight(.5);
-        Thread.sleep(1000);
+        turnRight(.25);
+        Thread.sleep(2450);
         DriveForward(0);
         Thread.sleep(1000);
+
+        DriveForward(.33);
+        Thread.sleep(750);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        armServo2.setPosition(1);
+        Thread.sleep(1000);
+        // down snowplow
 
         DriveForward(.25);
         Thread.sleep(1000);
         DriveForward(0);
         Thread.sleep(1000);
 
-        armServo2.setPosition(1);
-        // down snowplow
-
-        DriveForward(0);
-        Thread.sleep(1000);
-
+        DriveBackwards(.25);
+        Thread.sleep(350);
         DriveBackwards(0);
         Thread.sleep(1000);
 
         armServo1.setPosition(1);
+        Thread.sleep(1000);
         // down marker
 
         armServo1.setPosition(0);
+        Thread.sleep(1000);
         //up marker
 
         armServo2.setPosition(0);
+        Thread.sleep(1000);
         //up snowplow
 
+        DriveForward(.25);
+        Thread.sleep(800);
         DriveForward(0);
         Thread.sleep(1000);
 
-        turnRight(0);
+        DriveBackwards(.15);
+        Thread.sleep(800);
+        DriveForward(0);
         Thread.sleep(1000);
+
+        turnRight(.25);
+        Thread.sleep(2000);
         turnRight(0);
         Thread.sleep(1000);
 
-        DriveForward(0);
-        Thread.sleep(1000);
+        DriveForward(1);
+        Thread.sleep(3000);
         DriveForward(0);
         Thread.sleep(1000);
 
