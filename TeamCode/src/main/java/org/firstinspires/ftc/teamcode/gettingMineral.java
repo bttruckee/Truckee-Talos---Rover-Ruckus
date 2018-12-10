@@ -18,13 +18,9 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-/**
- /**
- * Created by sawyerthompson on 10/27/17.
- */
 
-@Autonomous(name="Bread")
-public class bread extends LinearOpMode {
+@Autonomous(name="gettingMineral")
+public class gettingMineral extends LinearOpMode {
     DcMotor leftMotor = null;
     DcMotor rightMotor = null;
     DcMotor leftMotorBack = null;
@@ -32,11 +28,12 @@ public class bread extends LinearOpMode {
     //DcMotor glyphMotor = null;
     DcMotor armMotor = null;
 
-    Servo armServo1 =null;
+    Servo armServo1 = null;
     Servo armServo2 = null;
     //Sensor color = null;
 
-    @Override public void runOpMode () throws InterruptedException {
+    @Override
+    public void runOpMode() throws InterruptedException {
         //frontR = hardwareMap.dcMotor.get("frontR");
         //frontL = hardwareMap.dcMotor.get("frontL");
         rightMotor = hardwareMap.dcMotor.get("rightMotor");
@@ -57,65 +54,59 @@ public class bread extends LinearOpMode {
         armMotor.setPower(0);
         Thread.sleep(1000);
 
-        turnLeft(.5);
-        Thread.sleep(2450);
+        // each turn left will be 180 degrees so 2 turns will be a full 360 turnaround
+        // this will help with consistancy of the program
+
+        turnRight(.5);
+        Thread.sleep(1000);
         DriveForward(0);
         Thread.sleep(1000);
 
+        turnRight(.5);
+        Thread.sleep(1000);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        DriveForward(.25);
+        Thread.sleep(1000);
+        DriveForward(0);
+        Thread.sleep(1000);
 
         armServo2.setPosition(1);
-        DriveForward(0);
-        Thread.sleep(1000);
-
-
-        DriveForward(.4);
-        Thread.sleep(2000);
-
+        // down snowplow
 
         DriveForward(0);
         Thread.sleep(1000);
 
-
-        turnLeft(.6);
-        Thread.sleep(700);
-
-
-        DriveForward(0);
-        Thread.sleep(   1000);
+        DriveBackwards(0);
+        Thread.sleep(1000);
 
         armServo1.setPosition(1);
-        Thread.sleep(2000);
+        // down marker
 
-        DriveForward(0);
-        Thread.sleep(2000);
+        armServo1.setPosition(0);
+        //up marker
 
         armServo2.setPosition(0);
-        armServo1.setPosition(1);
+        //up snowplow
+
         DriveForward(0);
         Thread.sleep(1000);
 
-        DriveForward(1);
-        Thread.sleep(3200);
-        armServo1.setPosition(0);
-        //armServo2.setPosition(1);
-        //Thread.sleep(1500);
-        //glyphMotor.setPower(-1);
-        //armServo1.setPosition(.8);
-        //armServo2.setPosition(.2);
-        //TurnLeft(1);
-        //Thread.sleep(500);
-        //DriveForward(1);
-        //Thread.sleep(4000);
-        //TurnRight(1);
-        //Thread.sleep(500);
-        //glyphMotor.setPower(0);
-        //Thread.sleep(500);
-        //DriveBackwards(.2);
-        //Thread.sleep(300);
+        turnRight(0);
+        Thread.sleep(1000);
+        turnRight(0);
+        Thread.sleep(1000);
+
         DriveForward(0);
+        Thread.sleep(1000);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+
     }
-    public void DriveForward (double power)
-    {
+
+    public void DriveForward(double power) {
         //frontL.setPower(power);
         //frontR.setPower(power);
         leftMotor.setPower(power);
@@ -124,8 +115,8 @@ public class bread extends LinearOpMode {
         rightMotorBack.setPower(-power);
         rightMotor.setPower(-power);
     }
-    public void DriveBackwards (double power)
-    {
+
+    public void DriveBackwards(double power) {
         //frontL.setPower(power);
         //frontR.setPower(power);
         //glyphMotor.setPower(-1);
@@ -134,7 +125,8 @@ public class bread extends LinearOpMode {
         rightMotor.setPower(power);
         rightMotorBack.setPower(power);
     }
-    public void turnLeft (double power){
+
+    public void turnRight(double power) {
         //glyphMotor.setPower(-1);
         leftMotorBack.setPower(-power);
         leftMotor.setPower(-power);
@@ -143,15 +135,4 @@ public class bread extends LinearOpMode {
         //frontR.setPower(power);
         //frontL.setPower(-power);
     }
-    public void turnRight (double power)
-    {
-        turnLeft(-power);
-    }
-
-
-
-
-
-
-
 }

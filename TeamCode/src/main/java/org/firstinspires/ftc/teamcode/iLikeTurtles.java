@@ -86,5 +86,11 @@ public class iLikeTurtles extends OpMode{
             rightMotor.setPower(rightPower/1.5);
             rightMotorBack.setPower(rightPower/1.5);
             armMotor.setPower(armPower);
+            if(gamepad2.x) {
+                armServo2.setPosition(1);
+            }
+            else if (gamepad2.y)  {
+                armServo2.setPosition(0);
+            }
       }
     }
