@@ -52,66 +52,49 @@ public class bread extends LinearOpMode {
         armServo2.setPosition(0);
         waitForStart();
 
-        armMotor.setPower(1);
-        Thread.sleep(3200);
+        armServo2.setPosition(1);
+        armMotor.setPower(-1);
+        Thread.sleep(3700);
         armMotor.setPower(0);
+        DriveForward(0);
         Thread.sleep(1000);
 
         turnLeft(.5);
-        Thread.sleep(2450);
+        Thread.sleep(2250);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        DriveForward(.33);
+        Thread.sleep(1200);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        DriveForward(.33);
+        Thread.sleep(1800);
         DriveForward(0);
         Thread.sleep(1000);
 
 
-        armServo2.setPosition(1);
+        turnLeft(.5);
+        Thread.sleep(1900);
         DriveForward(0);
         Thread.sleep(1000);
-
-
-        DriveForward(.4);
-        Thread.sleep(2000);
-
-
-        DriveForward(0);
-        Thread.sleep(1000);
-
-
-        turnLeft(.6);
-        Thread.sleep(700);
-
-
-        DriveForward(0);
-        Thread.sleep(   1000);
 
         armServo1.setPosition(1);
         Thread.sleep(2000);
 
         DriveForward(0);
         Thread.sleep(2000);
+
+        armServo1.setPosition(0);
+        DriveForward(0);
+        Thread.sleep(1000);
 
         armServo2.setPosition(0);
-        armServo1.setPosition(1);
-        DriveForward(0);
-        Thread.sleep(1000);
 
         DriveForward(1);
         Thread.sleep(3200);
-        armServo1.setPosition(0);
-        //armServo2.setPosition(1);
-        //Thread.sleep(1500);
-        //glyphMotor.setPower(-1);
-        //armServo1.setPosition(.8);
-        //armServo2.setPosition(.2);
-        //TurnLeft(1);
-        //Thread.sleep(500);
-        //DriveForward(1);
-        //Thread.sleep(4000);
-        //TurnRight(1);
-        //Thread.sleep(500);
-        //glyphMotor.setPower(0);
-        //Thread.sleep(500);
-        //DriveBackwards(.2);
-        //Thread.sleep(300);
+
         DriveForward(0);
     }
     public void DriveForward (double power)

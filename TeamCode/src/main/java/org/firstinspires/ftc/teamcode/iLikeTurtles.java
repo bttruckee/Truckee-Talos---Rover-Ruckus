@@ -47,7 +47,7 @@ public class iLikeTurtles extends OpMode{
             leftMotorBack.setDirection(DcMotor.Direction.FORWARD);
             rightMotorBack.setDirection(DcMotor.Direction.REVERSE);
             armMotor.setDirection(DcMotor.Direction.FORWARD);
-
+            armServo2.setPosition(0);
             // Tell the driver that initialization is complete.
             telemetry.addData("Status", "Initialized");
         }
@@ -62,7 +62,6 @@ public class iLikeTurtles extends OpMode{
             double servoPower;
 
             //armServo1.setPosition(1);
-            armServo2.setPosition(0);
             // Choose to drive using either Tank Mode, or POV Mode
             // Comment out the method that's not used.  The default below is POV.
 
