@@ -63,33 +63,53 @@ public class bread2 extends LinearOpMode {
         // this will help with consistancy of the program
 
         turnRight(.5);
-        Thread.sleep(1325);
-        DriveForward(0);
-        Thread.sleep(1000);
-
-        turnRight(.5);
-        Thread.sleep(1225);
+        Thread.sleep(2300);
         DriveForward(0);
         Thread.sleep(1000);
 
         DriveForward(.33);
-        Thread.sleep(750);
+        Thread.sleep(350);
         DriveForward(0);
         Thread.sleep(1000);
 
-        armServo2.setPosition(1);
+        armServo2.setPosition(0);
         Thread.sleep(1000);
         // down snowplow
 
         DriveForward(.33);
-        Thread.sleep(1000);
+        Thread.sleep(500);
         DriveForward(0);
         Thread.sleep(1000);
 
-        DriveBackwards(.33);
-        Thread.sleep(350);
+        turnLeft(.33);
+        Thread.sleep(1000);
         DriveBackwards(0);
         Thread.sleep(1000);
+
+        DriveForward(.33);
+        Thread.sleep(500);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        turnLeft(.75);
+        Thread.sleep(1200);
+        turnRight(0);
+        Thread.sleep(1000);
+
+        DriveForward(1);
+        Thread.sleep(3000);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        turnRight(.75);
+        Thread.sleep(1400);
+        turnRight(0);
+        Thread.sleep(1000);
+
+        DriveForward(.5);
+        Thread.sleep(500);
+        DriveForward(0);
+        Thread.sleep(900);
 
         armServo1.setPosition(1);
         Thread.sleep(1000);
@@ -103,29 +123,10 @@ public class bread2 extends LinearOpMode {
         Thread.sleep(1000);
         //up snowplow
 
-        DriveForward(.33);
-        Thread.sleep(800);
-        DriveForward(0);
-        Thread.sleep(1000);
-
-        DriveBackwards(.15);
-        Thread.sleep(800);
-        DriveForward(0);
-        Thread.sleep(1000);
-
-        turnRight(.5);
-        Thread.sleep(2000);
-        turnRight(0);
-        Thread.sleep(1000);
-
         DriveForward(1);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         DriveForward(0);
         Thread.sleep(1000);
-
-
-
-
     }
 
     public void DriveForward(double power) {
@@ -156,6 +157,10 @@ public class bread2 extends LinearOpMode {
         rightMotorBack.setPower(-power);
         //frontR.setPower(power);
         //frontL.setPower(-power);
+    }
+
+    public void turnLeft(double power) {
+        turnRight(-power);
     }
 
 }

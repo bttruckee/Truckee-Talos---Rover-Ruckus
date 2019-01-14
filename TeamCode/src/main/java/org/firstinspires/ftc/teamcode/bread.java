@@ -59,7 +59,7 @@ public class bread extends LinearOpMode {
         DriveForward(0);
         Thread.sleep(1000);
 
-        turnLeft(.5);
+        turnRight(.5);
         Thread.sleep(2250);
         DriveForward(0);
         Thread.sleep(1000);
@@ -97,8 +97,7 @@ public class bread extends LinearOpMode {
 
         DriveForward(0);
     }
-    public void DriveForward (double power)
-    {
+    public void DriveForward(double power) {
         //frontL.setPower(power);
         //frontR.setPower(power);
         leftMotor.setPower(power);
@@ -107,8 +106,8 @@ public class bread extends LinearOpMode {
         rightMotorBack.setPower(-power);
         rightMotor.setPower(-power);
     }
-    public void DriveBackwards (double power)
-    {
+
+    public void DriveBackwards(double power) {
         //frontL.setPower(power);
         //frontR.setPower(power);
         //glyphMotor.setPower(-1);
@@ -117,7 +116,8 @@ public class bread extends LinearOpMode {
         rightMotor.setPower(power);
         rightMotorBack.setPower(power);
     }
-    public void turnLeft (double power){
+
+    public void turnRight(double power) {
         //glyphMotor.setPower(-1);
         leftMotorBack.setPower(-power);
         leftMotor.setPower(-power);
@@ -126,15 +126,16 @@ public class bread extends LinearOpMode {
         //frontR.setPower(power);
         //frontL.setPower(-power);
     }
-    public void turnRight (double power)
-    {
-        turnLeft(-power);
+
+
+    public void turnLeft(double power) {
+        turnRight(-power);
     }
 
-
-
-
-
-
-
 }
+
+
+
+
+
+
