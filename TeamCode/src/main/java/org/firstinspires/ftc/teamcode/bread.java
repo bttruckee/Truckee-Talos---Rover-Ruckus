@@ -60,7 +60,7 @@ public class bread extends LinearOpMode {
         Thread.sleep(1000);
 
         turnRight(.5);
-        Thread.sleep(2250);
+        Thread.sleep(2050);
         DriveForward(0);
         Thread.sleep(1000);
 

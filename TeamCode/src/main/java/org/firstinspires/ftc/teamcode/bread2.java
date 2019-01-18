@@ -55,7 +55,7 @@ public class bread2 extends LinearOpMode {
 
         armServo2.setPosition(1);
         armMotor.setPower(-1);
-        Thread.sleep(3210);
+        Thread.sleep(3600);
         armMotor.setPower(0);
         Thread.sleep(1000);
 
@@ -63,12 +63,12 @@ public class bread2 extends LinearOpMode {
         // this will help with consistancy of the program
 
         turnRight(.5);
-        Thread.sleep(2300);
+        Thread.sleep(2200);
         DriveForward(0);
         Thread.sleep(1000);
 
         DriveForward(.33);
-        Thread.sleep(350);
+        Thread.sleep(490);
         DriveForward(0);
         Thread.sleep(1000);
 
@@ -76,38 +76,43 @@ public class bread2 extends LinearOpMode {
         Thread.sleep(1000);
         // down snowplow
 
-        DriveForward(.33);
-        Thread.sleep(500);
-        DriveForward(0);
-        Thread.sleep(1000);
-
-        turnLeft(.33);
-        Thread.sleep(1000);
+        turnLeft(.5);
+        Thread.sleep(950);
         DriveBackwards(0);
         Thread.sleep(1000);
 
         DriveForward(.33);
-        Thread.sleep(500);
+        Thread.sleep(1300);
         DriveForward(0);
         Thread.sleep(1000);
 
         turnLeft(.75);
-        Thread.sleep(1200);
+        Thread.sleep(280);
         turnRight(0);
         Thread.sleep(1000);
 
-        DriveForward(1);
-        Thread.sleep(3000);
+        DriveForward(.75);
+        Thread.sleep(1650);
         DriveForward(0);
         Thread.sleep(1000);
 
-        turnRight(.75);
-        Thread.sleep(1400);
-        turnRight(0);
+        DriveBackwards(.5);
+        Thread.sleep(200);
+        DriveForward(0);
         Thread.sleep(1000);
 
+        turnLeft(.85);
+        Thread.sleep(1550);
+        DriveForward(0);
+        Thread.sleep(1000);
+
+        DriveBackwards(.5);
+        Thread.sleep(400);
+        DriveForward(0);
+        Thread.sleep(900);
+
         DriveForward(.5);
-        Thread.sleep(500);
+        Thread.sleep(200);
         DriveForward(0);
         Thread.sleep(900);
 
@@ -117,14 +122,15 @@ public class bread2 extends LinearOpMode {
 
         armServo1.setPosition(0);
         Thread.sleep(1000);
-        //up marker
+        DriveForward(0);
+        Thread.sleep(900);
 
         armServo2.setPosition(0);
         Thread.sleep(1000);
         //up snowplow
 
         DriveForward(1);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         DriveForward(0);
         Thread.sleep(1000);
     }
